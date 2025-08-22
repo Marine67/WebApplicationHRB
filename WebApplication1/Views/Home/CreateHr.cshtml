@@ -1,0 +1,90 @@
+﻿@model RoomDetails
+
+@{
+    ViewData["Title"] = "create Hotel Reservation";
+}
+
+<h1>Hotel Reservation</h1>
+
+<h4>Room Booking Form</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="createHR">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group" type="hidden">
+                <label asp-for="RegistrationId" class="control-label"></label>
+                <input asp-for="RegistrationId" class="form-control" value="0000" />
+                <span asp-validation-for="RegistrationId" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+
+
+            <div class="form-group">
+                <label asp-for="RoomType" class="control-label"></label>
+                @* <input asp-for="RoomType" class="form-control" /> *@
+                <select asp-for="RoomType" class="form-control">
+                    <option value="D">D</option>
+                    <option value="P">P</option>
+                </select>
+                <span asp-validation-for="RoomType" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="RoomCategory" class="control-label"></label>
+                <input asp-for="RoomCategory" class="form-control" />
+                <span asp-validation-for="RoomCategory" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BedType" class="control-label"></label>
+                <input asp-for="BedType" class="form-control" />
+                <span asp-validation-for="BedType" class="text-danger"></span>
+            </div>
+
+
+
+
+            <div class="form-group">
+                <label asp-for="BookingDate" class="control-label"></label>
+                <input asp-for="BookingDate" class="form-control" value="@DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")" readonly />
+                <span asp-validation-for="BookingDate" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="StartDate" class="control-label"></label>
+                <input asp-for="StartDate" class="form-control" type="datetime-local"
+                       min="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" />
+                <span asp-validation-for="StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EndDate" class="control-label"></label>
+                <input asp-for="EndDate" class="form-control" />
+                <span asp-validation-for="EndDate" class="text-danger"></span>
+            </div>
+
+
+
+            <br />
+
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+
+
+        </form>
+    </div>
+</div>
+
+<div>
+    @*  <a asp-action="Index">Back to List</a> *@
+</div>

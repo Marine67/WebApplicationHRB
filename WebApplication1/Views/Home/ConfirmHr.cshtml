@@ -1,0 +1,28 @@
+﻿@model RoomDetails
+
+
+<h2>Room Booking Confirmation</h2>
+
+<p><strong>Registration ID:</strong> @Model.RegistrationId</p>
+<p><strong>Room Type:</strong> @Model.RoomType</p>
+<p><strong>Bed Type:</strong> @Model.BedType</p>
+<p><strong>Room Category:</strong> @Model.RoomCategory</p>
+<p><strong>Price:</strong> @Model.price</p>
+
+
+<form asp-action="ConfirmHR" method="post">
+    <input type="hidden" asp-for="RegistrationId" />
+    <input type="hidden" asp-for="Name" />
+    <input type="hidden" asp-for="RoomType" />
+    <input type="hidden" asp-for="BedType" />
+    <input type="hidden" asp-for="RoomCategory" />
+
+    <input type="hidden" asp-for="BookingDate" />
+    <input type="hidden" asp-for="StartDate" />
+    <input type="hidden" asp-for="EndDate" />
+
+    <input type="hidden" asp-for="totdays" />
+
+    <button type="submit" class="btn btn-success">Confirm</button>
+    <a asp-action="createHR" class="btn btn-danger">Cancel</a>
+</form>
