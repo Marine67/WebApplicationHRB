@@ -13,7 +13,7 @@ namespace WebApplication1.Controllers
         public DBContext db;
         public string Configuration;
 
-        public int id=106;
+        public int id=1;
 
         public HomeController(ILogger<HomeController> logger, DBContext context, IConfiguration configuration)
         {
