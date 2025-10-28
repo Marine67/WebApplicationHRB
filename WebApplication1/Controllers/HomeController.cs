@@ -15,7 +15,7 @@ namespace WebApplication1.Controllers
 
         public string test;
 
-        public int a;
+        public int a=10;
 
         public HomeController(ILogger<HomeController> logger, DBContext context, IConfiguration configuration)
         {
