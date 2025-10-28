@@ -13,9 +13,7 @@ namespace WebApplication1.Controllers
         public DBContext db;
         public string Configuration;
 
-        public string test;
-
-        public int a=5;
+        
 
         public HomeController(ILogger<HomeController> logger, DBContext context, IConfiguration configuration)
         {
