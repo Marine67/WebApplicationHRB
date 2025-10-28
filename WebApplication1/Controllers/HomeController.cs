@@ -15,11 +15,12 @@ namespace WebApplication1.Controllers
 
         public string test;
 
-        public int a=10;
+        public int a=5;
 
         public HomeController(ILogger<HomeController> logger, DBContext context, IConfiguration configuration)
         {
             _logger = logger;
+
             db = context;
             Configuration = configuration.GetConnectionString("DefaultConnection");
         }
