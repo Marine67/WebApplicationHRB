@@ -13,6 +13,8 @@ namespace WebApplication1.Controllers
         public DBContext db;
         public string Configuration;
 
+        public string test;
+
         public HomeController(ILogger<HomeController> logger, DBContext context, IConfiguration configuration)
         {
             _logger = logger;
